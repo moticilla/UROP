@@ -1,15 +1,16 @@
 import csv
 
-#with open('my_csv_experiment.csv', mode='r') as infile:
-#    reader = csv.reader(infile)
-#    with open("/Users/Documents/UROP/my_csv_experiment.csv", mode='w') as outfile:
-#        writer = csv.writer(outfile)
-#        mydict = {rows[0]:rows[5] for rows in reader}
+word_freq = {
+"Hello": 56,
+"at": 23,
+"test": 43,
+"this": 43
+}
 
-#experiment_dict = csv.DictReader(open("my_csv_experiment.csv"))
+#print(word_freq)
 
-with open("/elliep/Documents/UROP/my_csv_experiment.csv", mode='r') as infile:
-    reader = csv.reader(infile)
-    with open("/elliep/Documents/UROP/my_csv_experiment.csv", mode='w') as outfile:
-        writer = csv.writer(outfile)
-        mydict = {rows[0]:rows[5] for rows in reader}
+csv_filename = 'my_csv_experiment.csv'
+with open(csv_filename) as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        print(row)
