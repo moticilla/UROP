@@ -58,5 +58,5 @@ b = CondB["EER"].mean()
 c = CondC["EER"].mean()
 d = CondD["EER"].mean()
 
-plt.plot([30,25,20],[b, c, d],"o")
+plt.plot([30,25,20],[b, c, d],".")
 plt.show()
