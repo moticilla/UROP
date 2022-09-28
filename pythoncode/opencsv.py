@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 word_freq = {
 "Hello": 56,
@@ -58,5 +59,15 @@ b = CondB["EER"].mean()
 c = CondC["EER"].mean()
 d = CondD["EER"].mean()
 
-plt.plot([30,25,20],[b, c, d],".")
+#plt.plot([30,25,20],[b, c, d],".")
+#plt.show()
+
+#print(CondB.EER.quantile([0.25,0.75]))
+
+#standard deviation
+berr =np.std(CondB.iloc[:,1])
+cerr =np.std(CondC.iloc[:,1])
+derr =np.std(CondD.iloc[:,1])
+
+plt.errorbar([30,25,20],[b, c, d],linestyle = ":", yerr = [berr, cerr, derr])
 plt.show()
